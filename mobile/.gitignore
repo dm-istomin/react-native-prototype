@@ -22,18 +22,18 @@ DerivedData
 project.xcworkspace
 
 # Gradle
-*/build/
-*/RNTester/android/app/build/
-*/RNTester/android/app/gradle/
-*/RNTester/android/app/gradlew
-*/RNTester/android/app/gradlew.bat
-*/ReactAndroid/build/
+/build/
+/RNTester/android/app/build/
+/RNTester/android/app/gradle/
+/RNTester/android/app/gradlew
+/RNTester/android/app/gradlew.bat
+/ReactAndroid/build/
 
 # Buck
 .buckd
 buck-out
-*/ReactAndroid/src/main/jni/prebuilt/lib/
-*/ReactAndroid/src/main/gen
+/ReactAndroid/src/main/jni/prebuilt/lib/
+/ReactAndroid/src/main/gen
 
 # Android Studio
 .project
@@ -48,13 +48,13 @@ buck-out
 .gradle
 local.properties
 *.iml
-*/android/
+/android/
 
 # Node
-*/node_modules
+node_modules
 *.log
 .nvm
-*/bots/node_modules/
+/bots/node_modules/
 package-lock.json
 
 # OS X
@@ -71,8 +71,8 @@ package-lock.json
 /*.xcodeproj
 
 # ReactCommon subdir shouldn't have Xcode project
-*/ReactCommon/**/*.xcodeproj
-*/RNTester/build
+/ReactCommon/**/*.xcodeproj
+RNTester/build
 
 # Libs that shouldn't have Xcode project
 /Libraries/FBLazyVector/**/*.xcodeproj
@@ -82,11 +82,19 @@ package-lock.json
 /packages/react-native-codegen/**/*.xcodeproj
 
 # CocoaPods
-*/template/ios/Pods/
-*/template/ios/Podfile.lock
-*/RNTester/Gemfile.lock
+/template/ios/Pods/
+/template/ios/Podfile.lock
+/RNTester/Gemfile.lock
 
 # Ignore RNTester specific Pods, but keep the __offline_mirrors__ here.
-*/RNTester/Pods/*
-*/!RNTester/Pods/__offline_mirrors
+RNTester/Pods/*
+!RNTester/Pods/__offline_mirrors
+
+# react-native-codegen
+/ReactCommon/fabric/components/rncore/
+/schema-rncore.json
+
+# Build-generated files
+build/
+DerivedData/
 
