@@ -14,6 +14,7 @@ import {
   View
 } from 'react-native';
 import { VictoryArea, VictoryAxis, VictoryBar, VictoryChart, VictoryPolarAxis, VictoryTheme } from 'victory-native'
+import { Card, Divider } from 'react-native-elements'
 
 
 const data = [
@@ -32,24 +33,24 @@ const polarData = [
 
 const App = () => (
     <SafeAreaView style={styles.container}>
-      <Text>
-        Hello world!
-      </Text>
-      <Text>
-        Bar chart with fake data:
-      </Text>
-      <VictoryChart domainPadding={20} width={350}>
-        <VictoryAxis tickValues={[1, 2, 3, 4]} tickFormat={['Q1', 'Q2', 'Q3', 'Q4']}/>
-        <VictoryAxis dependentAxis tickFormat={(x) => (`$${x / 1000}k`)}/>
-        <VictoryBar data={data} x='quarter' y='earnings' />
-      </VictoryChart>
-      <Text>
-        Another type of chart:
-      </Text>
-      <VictoryChart polar domainPadding={15} width={350}>
-        <VictoryPolarAxis />
-        <VictoryArea data={polarData} style={{ data: { fill: '#c43a31' } }} />
-      </VictoryChart>
+      <Card title="Hello world">
+        <Text>
+          Bar chart with fake data:
+        </Text>
+        <VictoryChart domainPadding={20} width={350}>
+          <VictoryAxis tickValues={[1, 2, 3, 4]} tickFormat={['Q1', 'Q2', 'Q3', 'Q4']}/>
+          <VictoryAxis dependentAxis tickFormat={(x) => (`$${x / 1000}k`)}/>
+          <VictoryBar data={data} x='quarter' y='earnings' />
+        </VictoryChart>
+        <Divider />
+        <Text>
+          Another type of chart:
+        </Text>
+        <VictoryChart polar domainPadding={15} width={350}>
+          <VictoryPolarAxis />
+          <VictoryArea data={polarData} style={{ data: { fill: '#c43a31' } }} />
+        </VictoryChart>
+      </Card>
     </SafeAreaView>
 )
 
